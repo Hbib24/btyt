@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "btyt",
+  "version": "0.0.1",
+  "description": "More user experience for youtube",
+  "permissions": ["scripting", "tabs", "activeTab"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["btyt.main.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "icons/icon.png"
+  }
+}
